@@ -46,7 +46,7 @@ class SuperAdminController extends Controller
 
       $userIdentification = Crypt::encrypt($user->identification);
 
-      $url = 'http://localhost:8000/events/'.$userIdentification;
+      $url = 'http://localhost:8888/events/'.$userIdentification;
       return view('admin.super-admin.codes.qr')->with('url',$url)->with('user',$user);
   }
 
@@ -67,7 +67,7 @@ class SuperAdminController extends Controller
     $users = User::where('userType','user')->get();
     foreach($users as $user){
       $identification = Crypt::encrypt($user->identification);
-      $url = 'http://localhost:8000/events/'.$identification;
+      $url = 'http://localhost:8888/events/'.$identification;
       QrCode::format('svg')->size(400)->generate($url, $path.$user->identification.'.svg');
     }
     $files = base_path().'/public/codes/qr/';
@@ -77,9 +77,14 @@ class SuperAdminController extends Controller
   }
 
   public function eventFound($identification){
-    $identification = Crypt::decrypt($identification);
-    $user = User::where('identification', $identification)->first();
-    return view('admin.search.index')->with('user',$user);
+    $user = Auth::user();
+    if($user != ''){
+      $identification = Crypt::decrypt($identification);
+      $user = User::where('identification', $identification)->first();
+      return view('admin.search.index')->with('user',$user);
+    }else{
+      return redirect('https://facebook.com');
+    }
   }
 
   public function saveEvent($identification, Request $request){

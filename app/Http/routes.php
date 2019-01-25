@@ -33,8 +33,13 @@ Route::group(['prefix'=>'control','middleware'=>['auth','AccessControl']],functi
 
 });
 
+
+Route::group(['prefix'=>'administrator','middleware'=>['auth','AccessAdmin']],function(){
+      Route::get('/', 'AdministratorController@dashboard');
+});
+
+
 //Login Routers
-//Route::get('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@showLoginForm']);
 Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@authenticate']);
 Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@logout']);
 
