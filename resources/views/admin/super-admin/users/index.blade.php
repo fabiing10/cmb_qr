@@ -50,8 +50,9 @@
                       <tr>
                         <th>Nombres</th>
                         <th>Apellidos</th>
+                        <th>Cedula</th>
                         <th>Correo Electronico</th>
-                        <th>Ciudad</th>
+                        <th>Telefono</th>
                         <th width="100">Opciones</th>
                       </tr>
                     </thead>
@@ -60,8 +61,9 @@
                       <tr>
                         <td><i class="icon fa-angle-right responsive-icon arrow-function" aria-hidden="true" style="display:none;font-size: 22px;" data-selected="right"></i>{{$client->name}}</td>
                         <td>{{$client->lastName}}</td>
+                        <td>{{$client->identification}}</td>
                         <td>{{$client->email}}</td>
-                        <td>{{$client->city}}</td>
+                        <td>{{$client->phone}}</td>
                         <td width="100">
                           <a href="/control/users/delete" class="btn btn-icon btn-delete-admin wb-eliminar-codigo"></a>
                           <a href="/control/users/qr/{{Crypt::encrypt($client->id)}}" class="">

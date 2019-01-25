@@ -27,7 +27,7 @@ data-animsition-out="fade-out">>
 
 
 <span class="glyphicons glyphicons-dog"></span>
-      <a href="../"><img class="brand-img" src="front/images/logo.svg" alt="..."></a>
+      <a href="../"><img class="brand-img" src="front/images/logo.png" alt="..."></a>
 
 </div>
 
@@ -76,17 +76,10 @@ data-animsition-out="fade-out">>
                                     <i class="fa fa-btn fa-sign-in"></i> Ingresar
                                 </button>
                           </div>
-                                @if(!Session::has('error_message'))
-                                <br>
-                                <br><center>Aun no estas resgistrado?</center>
-                                <br>
-                                <a href="/register" class="btn btn-primary btn-login">Registrarme</a>
-                                <br>
-                                @endif
                         </div>
                     </form>
 
-
+                    <!--
                     @if(Session::has('error_message'))
                     <div class="message-error">
                         <h3>Necesita Ayuda?</h2>
@@ -118,6 +111,7 @@ data-animsition-out="fade-out">>
                     </form>
 
                     @endif
+                  -->
                 </div>
             </div>
 @endsection

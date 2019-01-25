@@ -71,7 +71,7 @@
             <i class="icon wb-more-horizontal" aria-hidden="true"></i>
         </button>
         <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-            <img class="navbar-brand-logo" src="{{URL::asset('assets/logo-identipet.png')}}" title="Remark">
+            <img class="navbar-brand-logo" src="{{URL::asset('assets/logo.png')}}" title="Remark">
             <!--<img class="navbar-brand-logo-responsive" src="{{URL::asset('assets/logo-identipet-responsive.png')}}" title="Remark">-->
             <!--<span class="navbar-brand-text hidden-xs"> Identipet</span>-->
         </div>

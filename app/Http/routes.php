@@ -244,10 +244,10 @@ Route::get('races/{petType}', 'AdministratorController@getRaces');
 
 
 //Search Routers
-Route::get('search', 'UserController@viewReport');
-Route::post('search', 'UserController@reportCode');
-Route::get('search/{code}', 'UserController@reportFound');
-Route::post('search/{code}', 'UserController@saveReport');
+Route::get('events', 'UserController@viewReport');
+Route::post('events', 'UserController@reportCode');
+Route::get('events/{id}', 'SuperAdminController@eventFound');
+Route::post('events/{id}', 'SuperAdminController@saveEvent');
 
 Route::get('agradecimiento', 'UserController@thanks');
 

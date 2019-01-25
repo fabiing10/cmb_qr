@@ -68,7 +68,7 @@ class CreateSchemaInitial extends Migration
             $table->timestamps();
         });
         */
-
+        /*
         //Table Codes
         Schema::create('Codes', function (Blueprint $table) {
             $table->increments('id');
@@ -84,17 +84,13 @@ class CreateSchemaInitial extends Migration
             $table->timestamps();
         });
 
-
+        */
         Schema::create('Events', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('description')->nullable();
+            $table->string('description')->nullable();
             $table->integer('userId')->unsigned();
             $table->foreign('userId')
                 ->references('id')->on('users')
-                ->onDelete('cascade');
-            $table->integer('codeId')->unsigned();
-            $table->foreign('codeId')
-                ->references('id')->on('Codes')
                 ->onDelete('cascade');
             $table->timestamps();
         });

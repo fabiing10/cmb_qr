@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="bootstrap admin template">
     <meta name="author" content="">
-    <title>Identipet</title>
+    <title>Cmb</title>
     <link rel="apple-touch-icon" href="{{URL::asset('admin/assets/images/apple-touch-icon.png')}}">
     <link rel="shortcut icon" href="{{URL::asset('admin/assets/images/favicon.ico')}}">
     <!-- Stylesheets -->

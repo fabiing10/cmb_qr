@@ -41,7 +41,7 @@
           <h4>Cedula:</h4>
           {{$user->identification}}
           <h4>URL:</h4>
-          <a href="{{$url}}" target="_blank">{{$url}}</a>
+          <a href="{{$url}}" target="_blank">Click Aquí</a>
           <br><br>
           <a class="btn btn-dark-identipet" download="{{$user->identification}}.png" href="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(400)->generate($url)) !!}">
             Descargar

@@ -29,11 +29,10 @@
   <div class="col-xlg-6 col-md-6">
         <div class="page-header" style="padding:5px 10px;">
           <ol class="breadcrumb">
-            <li><a href="/administrator">Inicio</a></li>
-            <li><a href="/administrator/clients">Clientes</a></li>
-            <li class="active">Nuevo Cliente</li>
+            <li><a href="/control/users">Inicio</a></li>
+            <li class="active">Nuevo Usuario</li>
           </ol>
-          <h2 class="page-title">Clientes</h2>
+          <h2 class="page-title">Usuario</h2>
         </div>
   </div>
 </div>
