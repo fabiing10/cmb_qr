@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Email</th>
+      <th>Veterinaria</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($clients as $client)
+    <tr>
+      <td>{{$client->name}}</td>
+      <td>{{$client->lastName}}</td>
+      <td>{{$client->email}}</td>
+      <td>{{$client->veterinary}}</td>
+      <td>{{$client->city}}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>

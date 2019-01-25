@@ -1,0 +1,950 @@
+@extends('front.layouts.default')
+
+
+@section('content')
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
+</div>
+<!-- Navbar -->
+    <nav class="navbar navbar-custom navbar-fixed-top">
+      <!-- Start Top Bar -->
+    <!-- End Top bar -->
+       <div class="container">
+       <!-- navbar -->
+          <div class="navbar-header page-scroll">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+             <i class="fa fa-bars"></i>
+             </button>
+             <!-- Logo -->
+             <div class="page-scroll">
+                <a class="navbar-brand" href="#page-top" style="padding: 5px;">
+        <!--Font Icon logo and text -->
+                   <img src="{{URL::asset('front/img/logo.svg')}}" alt="" width="165" />
+                </a>
+             </div>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+             <ul class="nav navbar-nav page-scroll">
+                <li class="active"><a href="#page-top">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#about">Acerca de IdentiPET</a></li>
+                <li><a href="#adoption">PET PLUS</a></li>
+                <li><a href="#offers">PET NEWS</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">registro</a></li>
+             </ul>
+          </div>
+       </div>
+    </nav><!-- Navbar ends -->
+<!-- Full Page Image Background Slider -->
+<div class="slider-container">
+<!-- Controls -->
+   <div class="slider-control left inactive"></div>
+   <div class="slider-control right"></div>
+     <ul class="slider-pagi"></ul>
+   <!--Slider -->
+   <div class="slider">
+   <!-- Slide 1 -->
+    <div class="slide slide-0 active">
+     <div class="slide__bg"></div>
+     <div class="slide__content">
+      <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+         <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+      </svg>
+      <div class="slide__text">
+        <div class="box cont-div">
+
+            <div class="icon red">
+              <a href="/user/pets">
+                 <div class="image"><span class="flaticon-pet22"></span></div>
+                 <h5>Perdi mi mascota</h5>
+              </a>
+            </div>
+
+            <div class="icon red">
+              <a href="/search">
+               <div class="image"><span class="flaticon-dog65"></span></div>
+                <h5>Encontré una Mascota</h5>
+              </div>
+            </a>
+        </div>
+
+
+
+
+        <h1 class="slide__text-heading">BIENVENIDO A Identipet</h1>
+        <div class="hidden-sm hidden-xs">
+          <p class="lead">IdentiPET es la solución perfecta para estar siempre cerca a tu mascota.</p>
+          <div class="page-scroll">
+           <a href="#services" class="btn btn-default">Servicios</a>
+          </div>
+         </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="slide slide-1">
+     <div class="slide__bg"></div>
+     <div class="slide__content">
+      <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+         <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+      </svg>
+      <div class="slide__text">
+        <div class="box cont-div">
+            <div class="icon red">
+                <a href="/user/pets">
+                  <div class="image"><span class="flaticon-pet22"></span></div>
+                  <h5>Perdi mi mascota</h5>
+                </a>
+            </div>
+            <div class="icon red">
+                <a href="/search">
+                  <div class="image"><span class="flaticon-dog65"></span></div>
+                  <h5>Encontré una Mascota</h5>
+                </a>
+            </div>
+        </div>
+         <h1 class="slide__text-heading">Notas de Interés</h1>
+         <div class="hidden-sm hidden-xs">
+          <p class="lead">Enterate de avisos clasificados y notas de interés acordes a tú mascota.</p>
+          <div class="page-scroll">
+           <a href="#offers" class="btn btn-default">PET News</a>
+          </div>
+         </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="slide slide-2">
+     <div class="slide__bg"></div>
+     <div class="slide__content">
+      <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+         <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+      </svg>
+      <div class="slide__text">
+        <div class="box cont-div">
+            <div class="icon red">
+              <a href="/user/pets">
+               <div class="image"><span class="flaticon-pet22"></span></div>
+               <h5>Perdi mi mascota</h5>
+             </a>
+            </div>
+            <div class="icon red">
+              <a href="/search">
+               <div class="image"><span class="flaticon-dog65"></span></div>
+               <h5>Encontré una Mascota</h5>
+             </a>
+            </div>
+        </div>
+         <h1 class="slide__text-heading">Acerca de Nosotros</h1>
+         <div class="hidden-sm hidden-xs">
+          <p class="lead">Descubre los multiples beneficios que tiene IdentiPET para tu mascota.</p>
+          <div class="page-scroll">
+           <a href="#about" class="btn btn-default">Acerca de IdentiPET</a>
+          </div>
+         </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="slide slide-3">
+     <div class="slide__bg"></div>
+     <div class="slide__content">
+      <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+         <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+      </svg>
+      <div class="slide__text">
+        <div class="box cont-div">
+            <div class="icon red">
+                <a href="/user/pets">
+                    <div class="image"><span class="flaticon-pet22"></span></div>
+                    <h5>Perdi mi mascota</h5>
+                </a>
+            </div>
+            <div class="icon red">
+              <a href="/search">
+               <div class="image"><span class="flaticon-dog65"></span></div>
+               <h5>Encontré una Mascota</h5>
+             </a>
+            </div>
+        </div>
+         <h1 class="slide__text-heading">Red de especialistas</h1>
+         <div class="hidden-sm hidden-xs">
+          <p class="lead">Toda una RED de Médicos Veterinarios Especialistas para tú mascota</p>
+          <div class="page-scroll">
+           <a href="#adoption" class="btn btn-default">PET Plus</a>
+          </div>
+         </div>
+      </div>
+     </div>
+    </div>
+
+   </div>
+</div>
+<!--/ Slider ends -->
+
+  <!-- Section services -->
+<section id="services" class="home-section">
+   <div class="col-lg-8 col-lg-offset-2">
+   <!-- Section heading -->
+    <div class="section-heading">
+     <h2>NUESTROS SERVICIOS</h2>
+    </div>
+   </div>
+   <div class="container">
+    <div class="row">
+     <!-- item 1-->
+     <div class="col-md-4 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
+      <div class="img-wrapper">
+         <img src="{{URL::asset('front/img/service1.jpg')}}" alt="" class="img-responsive"/>
+      </div>
+      <h4>Localizador de Mascotas</h4>
+      <p class="margin">A través del sistema de posicionamiento global <strong>(GPS)</strong> y por medio de tu Smart Phone, Tablet y/o computadora podrá ubicar y rastrear de manera inmediata el lugar exacto donde se encuentra tu mascota.
+      </p>
+     </div><!-- /col-md-4-->
+
+     <!-- item 2-->
+     <div class="col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="0.2s">
+      <div class="img-wrapper">
+         <img src="{{URL::asset('front/img/service2.jpg')}}" alt="" class="img-responsive"/>
+      </div>
+      <h4>Red de Especialistas</h4>
+      <p class="margin"><span class="DestacadoColor"><strong>IdentiPET</strong></span> cuenta con los mejores médicos veterinarios especializados en diferentes áreas de la salud animal para ser recomendados si el dueño de la mascota decide acceder a una segunda opinión).
+      </p>
+     </div><!-- /col-md-4-->
+
+     <!-- item 3-->
+     <div class="col-md-4 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+      <div class="img-wrapper">
+         <img src="{{URL::asset('front/img/service3.jpg')}}" alt="" class="img-responsive"/>
+      </div>
+      <h4>Historia Clínica OnLine</h4>
+      <p><strong>Software Veterinario</strong> creado y diseñado para que el médico veterinario de tu mascota lleve todo el registro clínico de ella. Podrás visualizarla en cualquier momento en caso de emergencia.
+      </p>
+     </div><!-- /col-md-4-->
+    </div>
+   </div>
+</section>
+<!-- /Section ends -->
+
+  <!-- Section About -->
+<section id="about" class="home-section">
+   <div class="col-lg-8 col-lg-offset-2">
+    <!-- Section Heading -->
+    <div class="section-heading">
+     <h2>ACERCA DE IdentiPET</h2>
+     <div class="hr"></div>
+    </div>
+   </div>
+    <div class="col-md-12 col-sm-12 col-centered">
+     <div class="centered-pills">
+      <!-- Navigation -->
+      <ul class="nav nav-pills">
+         <li class="active"><a href="#pane1" data-toggle="tab">¿Qué es IdentiPET?</a></li>
+         <li><a href="#pane2" data-toggle="tab">¿Cómo Funciona?</a></li>
+         <li><a href="#pane3" data-toggle="tab">Beneficios</a></li>
+      </ul>
+     </div>
+    </div>
+   <div class="container">
+    <!-- Panels start -->
+    <div class="tabbable">
+     <div class="tab-content">
+      <!-- Panel  1 -->
+      <div id="pane1" class="paneltab tab-pane fade active in">
+         <div class="row">
+          <div class="col-md-12 col-sm-12">
+           <div class="col-lg-7 col-md-6 col-sm-12 res-margin wow fadeInRight animated" data-wow-delay="0.2s">
+            <h3>Qué es IdentiPET</h3>
+            <p><span class="DestacadoColor"><strong>IdentiPET</strong></span> es la solución perfecta y la aplicación que estabas esperando para estar siempre cerca de tu mascota. De fácil de manejo y con una respuesta inmediata ahora al alcance de todos.</p>
+                          <p><span class="DestacadoColor"><strong>IdentiPET</strong></span> te ofrece multiples beneficios, incluyendo entre ellos toda una red veterinaria,  App geo localizador, noticias, y lo mas importante <strong>PET PLUS</strong>.</p>
+           </div>
+           <div class="col-lg-5 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0.2s">
+            <img src="{{URL::asset('front/img/about.png')}}" alt="" class="img-responsive"/>
+           </div>
+          </div>
+          <!-- icons -->
+          <div class="col-xs-12 col-md-4 col-lg-4">
+           <div class="box">
+            <div class="icon">
+               <div class="image"><span class="flaticon-pet22"></span></div>
+               <h5>Perdí mi Mascota</h5>
+               <p>Alerta a la familia <span class="DestacadoColor"><strong>IdentiPET</strong></span> sobre la perdida de tu mascota, seguro muy pronto tendremos buenas noticias.</p>
+            </div>
+           </div>
+          </div>
+          <div class="col-xs-12 col-md-4 col-lg-4">
+           <div class="box">
+            <div class="icon">
+               <div class="image"><span class="flaticon-dog65"></span></div>
+               <h5>Encontré una Mascota</h5>
+               <p>Ayuda a está mascota a regresar a casa. Por favor ingresa ó escanea con tu <span class="destacadoNeg">Smartphone</span> <span class="DestacadoColor"><strong>el código QR.</strong></span></p>
+            </div>
+           </div>
+          </div>
+          <div class="col-xs-12 col-md-4 col-lg-4">
+           <div class="box">
+            <div class="icon">
+               <div class="image"><span class="flaticon-pets19"></span></div>
+               <h5>H.C. OnLine</h5>
+               <p><span class="DestacadoColor"><strong>Historia Clínica OnLine</strong></span> - Solicitar/Cancelar citas en la clínica veterinaria donde es atendida tu mascota.
+.</p>
+            </div>
+           </div>
+          </div>
+         </div>
+       </div>
+      <!-- Panel 1 ends -->
+
+      <!-- Panel 2 -->
+      <div id="pane2" class="paneltab tab-pane fade">
+        <div class="row">
+         <div class="col-lg-6 col-md-6 col-sm-12 res-margin">
+          <h3>Funcionamiento</h3>
+          <p>Es muy sencillo y fácil, <span class="DestacadoColor"><strong>IdentiPET</strong></span> a través del sistema de posicionamiento global <strong>(GPS)</strong> y por medio de tu Smart Phone, Tablet y/o computadora podrá ubicar y rastrear de manera inmediata el lugar exacto donde se encuentra tu mascota.</p>
+                    <p>Una vez adquirido el <span class="DestacadoColor"><strong>KIT identificador</strong></span> para tu mascota deberás registrarlo en nuestra página con el código único de identificación <strong>IDP,</strong> seguir las instrucciones detalladas que te haremos llegar a vuelta de correo o que también encontraran dentro de cada <span class="DestacadoColor"><strong>KIT</strong></span> al momento de adquirirlo.</p>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12">
+          <!-- Responsive video -->
+          <div class="embed-responsive embed-responsive-16by9">
+           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/deN3nt3Sdhc"></iframe>
+          </div>
+         </div>
+        </div>
+      </div><!-- / Panel 2 ends -->
+
+      <!-- Panel  3 -->
+      <div id="pane3" class="paneltab tab-pane fade">
+        <div class="row">
+         <div class="col-lg-6 col-md-6 col-sm-12 res-margin">
+          <h3>Múltiples Beneficios</h3>
+          <p>Noticias, servicios clasificados y notas de tu interés y acordes a tu mascota.</p>
+                    <p>Ayudarás a otros miembros de la familia a ubicar su mascota o ellos la tuya en caso de pérdida, robo o simplemente un descuido accidental.</p>
+                    <p><span class="destacadoNeg">Solicitar / cancelar o reprogramar</span> citas en la clínica veterinaria donde es atendida tu mascota.</p>
+                    <p>Contar con una <span class="destacadoNeg"> red de especialistas veterinarios:</span> en caso de tu mascota requiera una segunda opinión de médico veterinario especializado.</p>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12">
+          <!-- Responsive video -->
+          <div class="embed-responsive embed-responsive-16by9">
+           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/deN3nt3Sdhc"></iframe>
+          </div>
+         </div>
+        </div>
+      </div><!-- /panel 3 ends -->
+    </div><!-- /.tab-content -->
+    </div><!-- /.tabbable -->
+   </div><!-- /container-->
+</section>
+<!-- Section ends-->
+
+  <!-- Section Testimonials -->
+<section id="testimonials" class="home-section">
+   <div class="col-lg-8 col-lg-offset-2">
+      <!-- Section Heading -->
+    <div class="section-heading">
+     <h2>Testimonios
+     </h2><div class="hr"></div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="row wow fadeInLeft" data-wow-delay="0.2s">
+     <div id="owl-testimonials" class="owl-carousel">
+      <!-- testimonial 1-->
+      <div class="col-md-10 col-centered">
+         <blockquote>
+          <div class="col-md-2 col-md-offset-5 col-sm-12 col-xs-12 text-center">
+           <!-- testimonial image-->
+           <img src="{{URL::asset('front/img/testimonial1.jpg')}}" alt="" class="res-margin img-responsive img-circle">
+          </div>
+          <div class="col-md-10 col-md-offset-1 quote-test">
+           <!-- quote -->
+           <p>Me encanta <strong>IdentiPET</strong> es de facil manejo ademas tengo toda la información de <strong>LUNA</strong> (mi perrita) siempre a la mano, el control de citas es buenisimo me recuerda cuando debo llevar a <strong>LUNA</strong> a la veterinaria y tambien puedo solicitar una cita desde mi teléfono sin moverme de casa</p>
+           <small>Monica Patricia C.</small>
+          </div>
+         </blockquote>
+      </div>
+
+      <!-- testimonial 2-->
+      <div class="col-md-10 col-centered">
+         <blockquote>
+          <div class="col-md-2 col-md-offset-5 col-sm-12 col-xs-12 text-center">
+           <!-- testimonial image-->
+           <img src="{{URL::asset('front/img/testimonial2.jpg')}}" alt="" class="res-margin img-responsive img-circle">
+          </div>
+          <div class="col-md-10 col-md-offset-1 quote-test">
+           <!-- quote -->
+           <p>Hace un par de años perdí mi masota una tarde en el parque, inesperadamente desaparecio en cuestion de segundos. Ahora por medio de mi gran amigo y medico veterinario de Mi Princesa meses me entere que existe <strong>IdentiPET.</strong> Afortunadamente no he tenido que utilizar el localizador pero el tema de la Historia Clínica es genial, tambien me gusta mucho los avisos y las notas que publican... Super felicitaciones muy buena idea.</p>
+           <small>Jhoanna Bernal</small>
+          </div>
+         </blockquote>
+      </div>
+
+      <!-- testimonial 3-->
+      <div class="col-md-10 col-centered">
+         <blockquote>
+          <div class="col-md-2 col-md-offset-5 col-sm-12 col-xs-12 text-center">
+           <!-- testimonial image-->
+           <img src="{{URL::asset('front/img/testimonial3.jpg')}}" alt="" class="res-margin img-responsive img-circle">
+          </div>
+          <div class="col-md-10 col-md-offset-1 quote-test">
+           <!-- quote -->
+           <p>Estoy feliz :) porque mis padres me dejaron adoptar mi propia mascota, cuando la lleve al veterinario a vacunarla me contaron de <strong>IdentiPET</strong> registre mis datos y los de <strong>Thomas</strong> super facil cualquiera lo puede hacer. El Doctor me dice que con la aplicación me va ayudar a manternerlo siempre bien y lo mejor que siempre va a estar a mi lado.</p>
+           <small>Juanfe ;)</small>
+          </div>
+         </blockquote>
+      </div>
+     </div><!--owl testimonials-->
+    </div><!--/row -->
+   </div><!--/container-->
+</section>
+<!-- Section Ends -->
+
+  <!-- Section Adoption -->
+<section id="adoption" class="home-section">
+   <div class="col-lg-8 col-lg-offset-2">
+    <!-- Section Heading -->
+    <div class="section-heading">
+     <h2>PET PLUS</h2>
+     <div class="hr"></div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="row wow fadeInDown" data-wow-delay="0.2s">
+    <!-- Image -->
+    <div class="col-md-4 col-sm-12 res-margin">
+       <img src="{{URL::asset('front/img/adopt.jpg')}}" class="img-responsive" alt="">
+    </div>
+     <div class="col-md-7">
+      <!-- Text -->
+       <h3>Qué es PET PLUS?</h3>
+       <p>Sabemos lo importante que es tú mascota, es por eso que <span class="DestacadoColor"><strong>IdentiPET</strong></span> pensando en el bienestar de tu mascota a creado <strong>PET Plus.</strong> Toda una red de los mejores médicos veterinarios especializados en diferentes áreas de la salud animal.
+       </p>
+             <p>Los miembros de la familia <span class="DestacadoColor"><strong>IdentiPET</strong></span> podrán optener grandes beneficios, descuentos especiales y un trato VIP para que tú mascota sea atendida en el menor tiempo posible.
+             </p>
+             <p>Para mayores informes <a href="#contact">Contáctenos</a> y conóce los múltiple beneficios de ser parte de la familia <span class="DestacadoColor"><strong>IdentiPET.</strong></span>
+       </p>
+      </div>
+     </div><!--/row-->
+
+     <div class="row">
+      <div class="col-md-5 col-sm-6">
+      <!-- Toggle -->
+         <h4 class="text-center">Preguntas Frecuentes</h4>
+         <div class="panel-group" id="accordion">
+          <!-- Question 1 -->
+          <div class="panel panel-default">
+           <div class="panel-heading">
+            <h5 class="panel-title">
+               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Debo estar registrado para utilizar la aplicación?</a>
+            </h5>
+           </div>
+           <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+               <p><span class="DestacadoNegrita">NO</span> es necesario estar registrado o contar con el <span class="DestacadoColor">KIT de identificación</span>  para ver los multiples beneficios que nos brinda <strong><span class="DestacadoColor">IdentiPET</span></strong>. Pero si quieres gozar de la aplicación al máximo y disfrutar de todos los servicios y beneficios que tenemos para ti, SI te recomendamos que registres tus datos y los de tu mascota</p>
+            </div>
+           </div>
+          </div>
+          <!-- Question 2 -->
+          <div class="panel panel-default">
+           <div class="panel-heading">
+            <h5 class="panel-title">
+               <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Puedo reportar una mascota sin estar registrado?</a>
+            </h5>
+           </div>
+           <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+               <p>Puedes reportar a una mascota encontrada aun sin estar registrado, pero en caso contrario sí quisieras reportar a tu mascota como extraviada no lo podrías hacer. Para este caso si es obligatorio contar con el <span class="DestacadoColor"> KIT de identificación</span> y haber registrado tus datos correctamente para que tu mascota pueda regresar mas pronto a casa.
+               </p>
+            </div>
+           </div>
+          </div>
+          <!-- Question 3 -->
+          <div class="panel panel-default">
+           <div class="panel-heading">
+            <h5 class="panel-title">
+               <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Que pasa con mis datos y la Historía Clínica de mi Mascota si cambio de Clínica Veterinaria?</a>
+            </h5>
+           </div>
+           <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+               <p>Tus datos personales, los de tu mascota, la Historia Clínica y todo el materia incluido dentro de la aplicación son de tú propiedad. Puedes cambiar libremente de Clinica y/o Médico Veterinario <span class="DestacadoColor"><strong> IdentiPET</strong></span> se encargara de migrar los datos a tu nueva sede, solo debes informarnos a taves del formulario de contácto y listo.
+               </p>
+            </div>
+           </div>
+          </div>
+          <!-- Question 4 -->
+          <div class="panel panel-default">
+           <div class="panel-heading">
+            <h5 class="panel-title">
+               <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Que descuentos obtengo con los Médicos Especialistas al estar registrado?</a>
+            </h5>
+           </div>
+           <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+               <p><span class="DestacadoColor"><strong>IdentiPET</strong></span> tiene grandes beneficios para los miembros de la familia, entre ellos una <span class="DestacadoNegrita">Red de Especialistas Médicos Veterinarios,</span> las tarifas y descuentos varian de acuerdo al tipo de consulta y/o de especialidad. Los valores y tarifas varian de acurdo al tipo de especialidad, <span class="DestacadoColor"><strong>IdentiPET</strong></span> premia tu fidelidad con un descuesto especial. Comunicate con nosotros a traves de nuestro formulario de contacto y recibiras información personalizada.
+               </p>
+            </div>
+           </div>
+          </div>
+          <!-- Question 5 -->
+          <div class="panel panel-default">
+           <div class="panel-heading">
+            <h5 class="panel-title">
+               <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Mi Mascota perdio la Placa Identificadora, Cómo obtengo un duplicado?</a>
+            </h5>
+           </div>
+           <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+               <p>Comúnicate con nosotros a traves del formulario de contacto con <span class="DestacadoNegrita">"Asunto" Solicitar Duplicado.</span> Si recuerdas el <span class="DestacadoColor">Código Alfa Númerico</span> por favor indicalo en el mensaje, si no lo recuerdas dejanos tus datos completos de registro y te indicaremos como y donde puedes retirar tu nueva placa (duplicado).
+               </p>
+            </div>
+           </div>
+          </div>
+         </div>
+      </div><!--/col-md-5 -->
+
+      <!-- Adopt a pet -->
+      <div class="col-md-7 col-sm-6">
+        <h4 class="text-center">Red de Especialistas Veterinarios</h4>
+         <div id="owl-adopt" class="owl-carousel owl-theme">
+          <!-- Animal 1 -->
+          <div>
+           <div class="col-md-12">
+            <div class="thumbnail text-center">
+            <!-- Image -->
+               <img src="{{URL::asset('front/img/adoption1.jpg')}}" class="img-circle img-responsive" alt="">
+               <!-- Name -->
+               <div class="caption-adoption">
+                <h6>SERVICIO OFTALMOLOGICO VETERINARIO</h6>
+                <!-- List -->
+                <ul class="list-unstyled">
+                 <li><strong>Dr:</strong> Carlos Aparicio</li>
+                 <li><strong>Esp: </strong> Oftalmologo</li>
+                 <li><strong>Ciudad:</strong> Bogotá</li>
+                </ul>
+                <!-- Buttons -->
+                <div class="toggle-btn page-scroll text-center">
+                 <a href="#1" class=" btn btn-default">Más Info</a>
+                </div>
+               </div>
+            </div><!-- /thumbnail -->
+           </div><!-- /col-md-12 -->
+          </div><!-- /div -->
+          <!-- /Animal 1 -->
+
+          <!-- Animal 2 -->
+          <div>
+           <div class="col-md-12">
+            <div class="thumbnail text-center">
+            <!-- Image -->
+               <img src="{{URL::asset('front/img/adoption2.jpg')}}" class="img-circle img-responsive" alt="">
+               <!-- Name -->
+               <div class="caption-adoption">
+                <h6>NEFROVET NEFROLOGIA VETERINARIA</h6>
+                <!-- List -->
+                <ul class="list-unstyled">
+                 <li><strong>Dr:</strong> Cesar Mayorga</li>
+                 <li><strong>Esp: </strong> Nefrologo</li>
+                 <li><strong>Ciudad:</strong> Bogotá</li>
+                </ul>
+                <!-- Buttons -->
+                <div class="toggle-btn page-scroll text-center">
+                 <a href="#2" class=" btn btn-default">Más Info</a>
+                </div>
+               </div>
+            </div><!-- /thumbnail -->
+           </div><!-- /col-md-12 -->
+          </div><!-- /div -->
+          <!-- /Animal 2 -->
+
+          <!-- Animal 3 -->
+          <div>
+           <div class="col-md-12">
+            <div class="thumbnail text-center">
+            <!-- Image -->
+               <img src="{{URL::asset('front/img/adoption3.jpg')}}" class="img-circle img-responsive" alt="">
+               <!-- Name -->
+               <div class="caption-adoption">
+                <h6>Clinica veterinaria Animal Health</h6>
+                <!-- List -->
+                <ul class="list-unstyled">
+                 <li><strong>Dr:</strong> Carlos Cifuentes</li>
+                 <li><strong>Esp: </strong> Neurológo</li>
+                 <li><strong>Ciudad:</strong> Bogotá</li>
+                </ul>
+                <!-- Buttons -->
+                <div class="toggle-btn page-scroll text-center">
+                 <a href="#3" class=" btn btn-default">Más Info</a>
+                </div>
+               </div>
+            </div><!-- /thumbnail -->
+           </div><!-- /col-md-12 -->
+          </div><!-- /div -->
+          <!-- /Animal 3 -->
+
+           <!-- Animal 4 -->
+          <div>
+           <div class="col-md-12">
+            <div class="thumbnail text-center">
+            <!-- Image -->
+               <img src="{{URL::asset('front/img/adoption4.jpg')}}" class="img-circle img-responsive" alt="">
+               <!-- Name -->
+               <div class="caption-adoption">
+                <h6>Clinica Veterinaria Berkana</h6>
+                <!-- List -->
+                <ul class="list-unstyled">
+                 <li><strong>Dr:</strong> Manuel Sanchez</li>
+                 <li><strong>Esp: </strong> Gastro</li>
+                 <li><strong>Ciudad:</strong> Bogotá</li>
+                </ul>
+                <!-- Buttons -->
+                <div class="toggle-btn page-scroll text-center">
+                 <a href="#4" class=" btn btn-default">Más Info</a>
+                </div>
+               </div>
+            </div><!-- /thumbnail -->
+           </div><!-- /col-md-12 -->
+          </div><!-- /div -->
+          <!-- /Animal 4 -->
+
+          <!-- Animal 5 -->
+          <div>
+           <div class="col-md-12">
+            <div class="thumbnail text-center">
+            <!-- Image -->
+               <img src="{{URL::asset('front/img/adoption5.jpg')}}" class="img-circle img-responsive" alt="">
+               <!-- Name -->
+               <div class="caption-adoption">
+                <h6>Clinica Veterinaria Vision Vet</h6>
+                <!-- List -->
+                <ul class="list-unstyled">
+                 <li><strong>Dra:</strong> Andrea Mora</li>
+                 <li><strong>Esp: </strong> Oftalmologa</li>
+                 <li><strong>Ciudad:</strong> Bogotá</li>
+                </ul>
+                <!-- Buttons -->
+                <div class="toggle-btn page-scroll text-center">
+                 <a href="#5" class=" btn btn-default">Más Info</a>
+                </div>
+               </div>
+            </div><!-- /thumbnail -->
+           </div><!-- /col-md-12 -->
+          </div><!-- /div -->
+          <!-- /Animal 5 -->
+
+         <!-- Animal 6 -->
+          <div>
+           <div class="col-md-12">
+            <div class="thumbnail text-center">
+            <!-- Image -->
+               <img src="{{URL::asset('front/img/adoption6.jpg')}}" class="img-circle img-responsive" alt="">
+               <!-- Name -->
+               <div class="caption-adoption">
+                <h6>CLINICA VET. ANIMAL MEDICAL CARE</h6>
+                <!-- List -->
+                <ul class="list-unstyled">
+                 <li><strong>Dr:</strong> Jorge Forero</li>
+                 <li><strong>Esp: </strong> Odontólogo</li>
+                 <li><strong>Ciudad:</strong> Bogotá</li>
+                </ul>
+                <!-- Buttons -->
+                <div class="toggle-btn page-scroll text-center">
+                 <a href="#6" class=" btn btn-default">Más Info</a>
+                </div>
+               </div>
+            </div><!-- /thumbnail -->
+           </div><!-- /col-md-12 -->
+          </div><!-- /div -->
+         <!-- /Animal 6 -->
+       </div><!-- /owl-adopt -->
+
+       <!-- Slide In Panel Animal 1 -->
+         <div class="cd-panel from-right" id="1">
+          <div class="cd-panel-container">
+           <div class="cd-panel-content">
+            <div class="col-md-7 col-centered">
+               <img src="{{URL::asset('front/img/adoption1.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <h3 class="text-center">Dr. Carlos Aparicio</h3>
+             <p><span class="destacadoNeg">Servicio Oftalmológico Veterinario</span> <span class="destacadoColor">(S.O.V.)</span> es una empresa que inicia en el año 2010 como una iniciativa colombiana a la nueva demanda de especialidades veterinarias. Inicia labores como una empresa dedicada a la interconsulta especializada en el área de oftalmología veterinaria y como centro de apoyo a los médicos veterinarios. S.O.V. Presta servicios de consulta Oftalmológica, Ecografía ocular, ERG, cirugía ocular avanzada, e investigación en el área.</p>
+            <div class="page-scroll text-center">
+               <a href="#contact" class="cd-close btn btn-default">Contactar</a>  <a class="cd-close btn btn-danger m-left"><i class="fa fa-times"></i>Cerrar</a>
+            </div>
+           </div><!-- /cd-panel-content -->
+          </div><!-- /cd-panel-container -->
+         </div><!-- /cd-panel -->
+
+         <!-- Slide In Panel Animal 2 -->
+         <div class="cd-panel from-right" id="2">
+          <div class="cd-panel-container">
+           <div class="cd-panel-content">
+            <div class="col-md-7 col-centered">
+               <img src="{{URL::asset('front/img/adoption2.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <h3 class="text-center">Dr. Cesar Mayorga</h3>
+            <p>NEFROVET, con más de 8 años de experiencia en medicina nefrológica y urológica y un gusto incansable por la medicina orientada a la especialidad, Nefrovet ofrece la posibilidad de recibir orientación específica y de alto nivel para pacientes renales.</p>
+            <div class="page-scroll text-center">
+               <a href="#contact" class="cd-close btn btn-default">Contactar</a>  <a class="cd-close btn btn-danger m-left"><i class="fa fa-times"></i>Cerrar</a>
+            </div>
+           </div><!-- /cd-panel-content -->
+          </div><!-- /cd-panel-container -->
+         </div><!-- /cd-panel -->
+
+         <!-- Slide In Panel Animal 3 -->
+         <div class="cd-panel from-right" id="3">
+          <div class="cd-panel-container">
+           <div class="cd-panel-content">
+            <div class="col-md-7 col-centered">
+               <img src="{{URL::asset('front/img/adoption3.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <h3 class="text-center">Dr. Carlos Cifuentes</h3>
+            <p>ANIMAL HEALTH, Clínica Veterinaria especializada en neurología veterinaria y medicina holónica, holística, homeopatía, acupuntura, sintergética, esencias florales, aromaterapia.</p>
+            <div class="page-scroll text-center">
+               <a href="#contact" class="cd-close btn btn-default">Contactar</a>  <a class="cd-close btn btn-danger m-left"><i class="fa fa-times"></i>Cerrar</a>
+            </div>
+           </div><!-- /cd-panel-content -->
+          </div><!-- /cd-panel-container -->
+         </div><!-- /cd-panel -->
+
+         <!-- Slide In Panel Animal 4 -->
+         <div class="cd-panel from-right" id="4">
+          <div class="cd-panel-container">
+           <div class="cd-panel-content">
+            <div class="col-md-7 col-centered">
+               <img src="{{URL::asset('front/img/adoption4.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <h3 class="text-center">Dr. Manuel Sanchez</h3>
+            <p>Clínica Veterinaria Berkana, Centro de especialistas Gastroenterologia Veterinaria.</p>
+            <div class="page-scroll text-center">
+               <a href="#contact" class="cd-close btn btn-default">Contactar</a>  <a class="cd-close btn btn-danger m-left"><i class="fa fa-times"></i>Cerrar</a>
+            </div>
+           </div><!-- /cd-panel-content -->
+          </div><!-- /cd-panel-container -->
+         </div><!-- /cd-panel -->
+
+         <!-- Slide In Panel Animal 5 -->
+         <div class="cd-panel from-right" id="5">
+          <div class="cd-panel-container">
+           <div class="cd-panel-content">
+            <div class="col-md-7 col-centered">
+               <img src="{{URL::asset('front/img/adoption5.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <h3 class="text-center">Dra. Andrea Mora</h3>
+            <p>En VISION VET, realizamos consulta médica general y especializada. Atención personalizada a cada una de nuestras mascotas. Contamos con un equipo médico veterinario que busca el bienestar y calidad de vida de nuestros pacientes..</p>
+            <div class="page-scroll text-center">
+               <a href="#contact" class="cd-close btn btn-default">Contactar</a>  <a class="cd-close btn btn-danger m-left"><i class="fa fa-times"></i>Cerrar</a>
+            </div>
+           </div><!-- /cd-panel-content -->
+          </div><!-- /cd-panel-container -->
+         </div><!-- /cd-panel -->
+
+         <!-- Slide In Panel Animal 6 -->
+         <div class="cd-panel from-right" id="6">
+          <div class="cd-panel-container">
+           <div class="cd-panel-content">
+            <div class="col-md-7 col-centered">
+               <img src="{{URL::asset('front/img/adoption6.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <h3 class="text-center">Dr. Jorge Forero</h3>
+            <p>Porque tu mascota se merece lo mejor, ANIMAL MEDICAL CARE, unidad de cuidado critico veterinario se compromete a trabajar arduamente por el bienestar de tu mascota. Especialistas en: Odontología y cirugía oral. Anestesia y cirugía especializada. Medicina interna. Oncología. Neonatología y pediatría. Geriatría.</p>
+            <div class="page-scroll text-center">
+               <a href="#contact" class="cd-close btn btn-default">Contactar</a>  <a class="cd-close btn btn-danger m-left"><i class="fa fa-times"></i>Cerrar</a>
+            </div>
+           </div><!-- /cd-panel-content -->
+          </div><!-- /cd-panel-container -->
+         </div><!-- /cd-panel -->
+      </div><!-- /col-md-7 -->
+    </div><!-- /row -->
+     </div><!-- /container -->
+ </section>
+<!-- Section ends -->
+
+<!-- Section Brands -->
+<section id="brands" class="home-section">
+   <div class="col-lg-8 col-lg-offset-2">
+   <!-- Section heading -->
+    <div class="section-heading">
+     <h2>Próximamente</h2>
+     <div class="hr"></div>
+    </div>
+   </div>
+   <div class="container text-center">
+    <div class="row">
+   <!-- Brand 1 -->
+   <div class="col-sm-6 col-md-3 res-margin">
+    <div class="well well-sm wow fadeInLeft">
+       <a href="#"><img src="{{URL::asset('front/img/client1.png')}}" alt="client" class="col-centered img-responsive"/></a>
+    </div>
+   </div>
+   <!-- Brand 2 -->
+   <div class="col-sm-6 col-md-3 res-margin">
+    <div class="well well-sm wow fadeInLeft">
+       <a href="#"><img src="{{URL::asset('front/img/client2.png')}}" alt="client" class="col-centered img-responsive"/></a>
+    </div>
+   </div>
+   <!-- Brand 3 -->
+   <div class="col-sm-6 col-md-3 res-margin">
+    <div class="well well-sm wow fadeInRight">
+       <a href="#"><img src="{{URL::asset('front/img/client3.png')}}" alt="client" class="col-centered img-responsive"/></a>
+    </div>
+   </div>
+   <!-- Brand 4 -->
+   <div class="col-sm-6 col-md-3">
+    <div class="well well-sm wow fadeInRight">
+       <a href="#"><img src="{{URL::asset('front/img/client4.png')}}" alt="client" class="col-centered img-responsive"/></a>
+    </div>
+    </div>
+  </div><!-- /row -->
+   </div><!-- /container -->
+</section>
+
+<!-- Section Call to Action -->
+<section id="call-to-action" class="small-section">
+   <div class="container text-center">
+    <div class="col-md-offset-5 col-md-7 col-sm-12">
+     <h3>Pregunta por IdentiPET en tú Veterinaria de Confianza </h3>
+     <p><strong>IdentiPET</strong>está disponible en todas las veterinarias de la ciudad (inicialmente en la ciudad de Bogotá) o solícitalo a través del formulario de Contácto, el envío es totalmente gratis y a domicilio (Aplica inicialmente en la ciudad de Bogotá). </p>
+     <!-- Buttons -->
+     <div class="page-scroll light-btn">
+      <a class="btn btn-default wow fadeInLeft" data-wow-delay="0.2s" href="#contact">Contactenos</a>
+      <a class="btn btn-default m-left wow fadeInRight" data-wow-delay="0.2s" href="#about">Más Sobre Nosotros</a>
+     </div>
+    </div>
+   </div><!-- /container- -->
+</section>
+<!-- Section ends -->
+
+<!-- Section Offers -->
+<section id="offers" class="home-section">
+   <div class="col-lg-8 col-lg-offset-2">
+    <!-- Section Heading -->
+    <div class="section-heading">
+     <h2>PET NEWS</h2>
+     <div class="hr"></div>
+    </div>
+   </div>
+   <div class="container wow fadeInDown" data-wow-delay="0.2s">
+   <div class="row">
+    <div class="col-md-10 col-centered">
+     <div id="owl-offers" class="owl-carousel">
+      <!-- Offer 1 -->
+      <div>
+         <div class="col-sm-4 col-md-3 col-sm-offset-1">
+          <!-- Offer image -->
+          <img src="{{URL::asset('front/img/offer1.png')}}" class="img-responsive" alt="">
+         </div>
+         <!-- Offer description -->
+         <div class="col-sm-7">
+          <div class="media-body">
+           <h4>Servicio de Guarderia: <span class="label label-default">20% OFF</span></h4>
+           <p>¿Va a salir y no sabe con quien dejar a su mascota? no es fácil llevarla cuando está de viaje o tiene un compromiso importante. No hay nada mejor que dejar a su perro en las mejores manos y con la tranquilidad de saber lo feliz que es en la Guardería Canina Villacanes.
+           </p>
+          </div>
+         </div>
+      </div>
+      <!-- Ends Offer 1 -->
+      <!-- Offer 2 -->
+      <div>
+         <div class="col-sm-4 col-md-3 col-sm-offset-1">
+          <!-- Offer image -->
+          <img src="{{URL::asset('front/img/offer2.png')}}" class="img-responsive" alt="">
+         </div>
+         <!-- Offer description -->
+         <div class="col-sm-7">
+          <div class="media-body">
+           <h4>Pet School: <span class="label label-default">30% OFF</span></h4>
+           <p>El comportamiento del perro es el resultado de su herencia genética, de la educación que recibe y de sus experiencias, sobre todo, cuando es un cachorro.
+                       La buena convivencia con el perro se basa en gran parte en educar de manera correcta al animal, de forma que acepte las normas y límites que se le imponen. Lo habitual es que se deban a planteamientos educativos erróneos y desconocimiento sobre las necesidades del animal.
+           </p>
+          </div>
+         </div>
+      </div>
+      <!-- Ends Offer 2 -->
+      <!-- Offer 3 -->
+      <div>
+         <div class="col-sm-4 col-md-3 col-sm-offset-1">
+          <!-- Offer image -->
+          <img src="{{URL::asset('front/img/offer3.png')}}" class="img-responsive" alt="">
+         </div>
+         <!-- Offer description -->
+         <div class="col-sm-7">
+          <div class="media-body">
+           <h4>Servicio Ambulancia: <span class="label label-default">40% OFF</span></h4>
+           <p>PRESTAMOS SERVICIO DE AMBULANCIA PARA PERROS Y GATOS EN BOGOTÁ.
+                       Nuestra clínica veterinaria cuenta con servicio de ambulancia para perros y gatos en Bogotá, Si su mascota está pasando por una urgencia y necesita de nuestro servicio de ambulancia para perros y gatos en Bogotá, no dude en contactarnos.
+                       Nuestro servicio de ambulancia para mascotas es 24 horas.
+           </p>
+          </div>
+         </div>
+      </div>
+       <!-- Ends Offer 3 -->
+     </div><!--/owl-offers -->
+    </div><!--/col-md-10 -->
+   </div><!-- /row-->
+</div><!-- /container -->
+</section>
+<!-- Section ends -->
+
+<!-- Section Contact -->
+<section id="contact" class="home-section">
+   <div class="col-lg-8 col-lg-offset-2">
+    <!-- Section heading -->
+    <div class="section-heading">
+     <h2>Contáctenos</h2>
+     <div class="hr"></div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="row">
+    <div class="margin col-md-4 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
+     <!-- Contact info -->
+     <h4>Información</h4>
+     <p>Si desea mayor información:</p>
+     <p><i class="fa fa-envelope"></i><a href="mailto:info@identipet.co">info@identipet.co</a> ó Llamenos al teléfono</p>
+     <p><i class="fa fa-phone"></i>+57 301 6867080 </p>
+     <!-- Adress info -->
+     <h4>Dirección & Horarios</h4>
+     <p><i class="fa fa-map-marker"></i>Transversal 78D # 10D 37 Of 30/302.</p>
+     <p><i class="fa fa-clock-o"></i>Abierto de 8:00 a.m a 6:00 p.m.</p>
+           <p><i class="fa fa-clock-o"></i>Sábados de 9:00 a.m a 2:00 p.m.</p>
+    </div>
+    <div class="col-md-7 col-md-offset-1 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
+     <!-- Contact form -->
+     <div class="form-style" id="contact_form">
+      <div id="contact_results"></div>
+      <div class="form-group">
+         <input type="text" name="name" class="form-control input-field" placeholder="Nombres Apellidos" required>
+      </div>
+      <div class="form-group">
+         <input type="email" name="email" class="form-control input-field"  placeholder="Email" required>
+      </div>
+      <div class="form-group">
+         <input type="text" name="subject" class="form-control input-field" placeholder="Asunto" required>
+      </div>
+      <div class="form-group">
+         <textarea name="message" id="message" class="textarea-field form-control" rows="4" placeholder="Escribe tú mensaje" required></textarea>
+      </div>
+      <div class="form-group">
+         <button type="submit" id="submit_btn" value="Submit" class="btn btn-default pull-right">Enviar Mensaje</button>
+      </div>
+     </div><!--/Contact form -->
+    </div><!-- /col-md-6 -->
+  </div><!-- /row -->
+   </div><!-- /container-->
+</section>
+
+<!--Map -->
+<div class="wow fadeInTop" data-wow-delay="0.2s">
+   <div id="map-canvas"></div>
+</div>
+@stop

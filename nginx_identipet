@@ -1,0 +1,13 @@
+server {
+
+
+    server_name identipet.co   www.identipet.co;
+
+    access_log /var/www/identipet.co/logs/identipet.co.access.log;
+    error_log /var/www/identipet.co/logs/identipet.co.error.log;
+
+    root /var/www/identipet.co/htdocs/public;
+
+    index index.php index.html index.htm;
+
+}
