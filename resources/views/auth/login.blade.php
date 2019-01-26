@@ -27,7 +27,7 @@ data-animsition-out="fade-out">>
 
 
 <span class="glyphicons glyphicons-dog"></span>
-      <a href="../"><img class="brand-img" src="front/images/logo.png" alt="..."></a>
+      <a href="../"><img class="brand-img" src="front/images/logo.png" alt="..." width="100px"></a>
 
 </div>
 

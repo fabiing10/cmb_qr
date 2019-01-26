@@ -77,26 +77,67 @@ class SuperAdminController extends Controller
   }
 
   public function eventFound($identification){
-    $user = Auth::user();
-    if($user != ''){
+    date_default_timezone_set('America/Bogota');
+    $userValidate = Auth::user();
+    if($userValidate != ''){
       $identification = Crypt::decrypt($identification);
       $user = User::where('identification', $identification)->first();
-      return view('admin.search.index')->with('user',$user);
+      $dateToday = date('d-m-Y');
+      $searchs = Event::where('userId',$user->id)->where('date','=',$dateToday)->get();
+      $hour = date('Hi');
+
+      if ($hour >= '0500' && $hour <= '1100'){
+        $event = 'desayuno';
+        foreach($searchs as $search) {
+          if ($search->description = 'desayuno' && $search->date = $dateToday){
+            $activate = 0;
+          }else {
+            $activate = 1;
+          }
+        }
+      }elseif($hour >= '1100' && $hour <= '1600'){
+        $event = 'almuerzo';
+        foreach($searchs as $search) {
+          if ($search->description = 'almuerzo' && $search->date = $dateToday){
+            $activate = 0;
+          }else {
+            $activate = 1;
+          }
+        }
+      }elseif($hour >= '1700' && $hour <= '2100'){
+        $event = 'cena';
+        foreach($searchs as $search){
+          if($search->description = 'cena' && $search->date = $dateToday){
+            $activate = 0;
+          }else {
+            $activate = 1;
+          }
+        }
+      }else{
+        $event = '';
+        $activate = 0;
+      }
+      return view('admin.search.index')->with('user',$user)->with('event',$event)->with('activate',$activate);
+
     }else{
       return redirect('https://facebook.com');
     }
   }
 
   public function saveEvent($identification, Request $request){
-    $identification = Crypt::decrypt($identification);
-    $user = User::where('identification', $identification)->first();
+    $identification2 = Crypt::decrypt($identification);
+    $user = User::where('identification', $identification2)->first();
+    if($request->event != ""){
+      $event = new Event;
+      $event->description = $request->event;
+      $event->userId = $user->id;
+      $event->date = date('d-m-Y');
+      $event->save();
+      return view('admin.search.thanks')->with('user',$user);
+    }else {
+      return redirect('events/'.$identification);
+    }
 
-    $event = new Event;
-    $event->description = $request->event;
-    $event->userId = $user->id;
-    $event->save();
-
-    return view('admin.search.thanks')->with('user',$user);
   }
 
   public function users(){

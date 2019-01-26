@@ -32,9 +32,11 @@ data-animsition-out="fade-out">>
               <div class="form-group">
                 <select class="form-control" id="event" name="event" required="">
                         <option value="">Escoge un evento a realizar</option>
-                        <option value="1">Almuerzo</option>
-                        <option value="2">Cena</option>
-                        <option value="3">Onces</option>
+                        <option value="entrada">Entrada</option>
+                        @if($activate == 1)
+                        <option value="{{$event}}">{{$event}}</option>
+                        @endif
+                        <option value="salida">Salida</option>
                 </select>
               </div>
               <div class="form-group">
