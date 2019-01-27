@@ -78,8 +78,7 @@ class SuperAdminController extends Controller
 
   public function eventFound($identification){
     date_default_timezone_set('America/Bogota');
-    $userValidate = Auth::user();
-    if($userValidate != ''){
+
       $identification = Crypt::decrypt($identification);
       $user = User::where('identification', $identification)->first();
       $dateToday = date('d-m-Y');
@@ -119,9 +118,7 @@ class SuperAdminController extends Controller
       }
       return view('admin.search.index')->with('user',$user)->with('event',$event)->with('activate',$activate);
 
-    }else{
-      return redirect('https://facebook.com');
-    }
+  
   }
 
   public function saveEvent($identification, Request $request){
