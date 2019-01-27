@@ -85,7 +85,7 @@ class SuperAdminController extends Controller
       $dateToday = date('d-m-Y');
       $searchs = Event::where('userId',$user->id)->where('date','=',$dateToday)->get();
       $hour = date('Hi');
-
+      $activate = 0;
       if ($hour >= '0500' && $hour <= '1100'){
         $event = 'desayuno';
         foreach($searchs as $search) {
