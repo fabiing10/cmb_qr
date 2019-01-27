@@ -23,6 +23,7 @@ data-animsition-out="fade-out">>
               <div class="form-group">
                 <img src="{{URL::asset('admin/assets/images/logo0.png')}}" alt="..." class="img-profile-f">
                 <h2>Bienvenido {{$user->name}}!</h2>
+                <h3>{{$hour}}</h3>
               </div>
               <!--
               <div class="form-group">

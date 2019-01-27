@@ -117,7 +117,7 @@ class SuperAdminController extends Controller
         $event = '';
         $activate = 0;
       }
-      return view('admin.search.index')->with('user',$user)->with('event',$event)->with('activate',$activate);
+      return view('admin.search.index')->with('user',$user)->with('event',$event)->with('activate',$activate)->with('hour',$hour);
 
     }else{
       return redirect('http://www.cmb.org.co/corporativo/?identification='.$identification);
