@@ -19,8 +19,6 @@ Route::get('redirect/login', ['uses' => 'HomeController@redirectURL']);
 Route::group(['prefix'=>'control','middleware'=>['auth','AccessControl']],function(){
 
     Route::get('/', 'SuperAdminController@dashboard');
-
-
     Route::group(['prefix'=>'users'],function(){
         Route::get('/', 'SuperAdminController@users');
         Route::get('/generateCodes', 'SuperAdminController@generateCodesQR');
