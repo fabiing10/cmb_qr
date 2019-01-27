@@ -46,6 +46,7 @@ class AuthController extends Controller
     public function authenticate(Request $request){
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
             // Authentication passed...
+
             return redirect()->intended('redirect/login');
         }else{
          \Session::flash('error_message','Datos Incorrectos! Intentalo nuevamente..');

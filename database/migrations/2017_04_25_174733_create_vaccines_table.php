@@ -12,24 +12,7 @@ class CreateVaccinesTable extends Migration
      */
     public function up()
     {
-      /*
-      Schema::create('Vaccines', function (Blueprint $table) {
-          $table->increments('id');
-          // Foreign key Users
-          $table->integer('petId')->unsigned();
-          $table->foreign('petId')
-              ->references('id')->on('Pets')
-              ->onDelete('cascade');
-          $table->jsonb('vaccines')->nullable();
-          $table->integer('agePet')->unsigned();
-          $table->string('sticker')->unsigned();
-          $table->string('typeVaccine')->unsigned();
-          $table->string('date')->unsigned();
-          $table->string('lote')->unsigned();
-          $table->string('laboratory')->unsigned();
-          $table->timestamps();
-      });
-      */
+    
     }
 
     /**
