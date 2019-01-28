@@ -88,36 +88,41 @@ class SuperAdminController extends Controller
       $activate = 0;
       if ($hour >= '0500' && $hour <= '1100'){
         $event = 'desayuno';
-        foreach($searchs as $search) {
+
+        return $event;
+      /*  foreach($searchs as $search) {
           if ($search->description = 'desayuno' && $search->date = $dateToday){
             $activate = 0;
           }else {
             $activate = 1;
           }
-        }
+        }*/
       }elseif($hour >= '1100' && $hour <= '1600'){
         $event = 'almuerzo';
-        foreach($searchs as $search) {
+      /*  foreach($searchs as $search) {
           if ($search->description = 'almuerzo' && $search->date = $dateToday){
             $activate = 0;
           }else {
             $activate = 1;
           }
-        }
+        }*/
+        return $event;
       }elseif($hour >= '1700' && $hour <= '2100'){
         $event = 'cena';
-        foreach($searchs as $search){
+      /*  foreach($searchs as $search){
           if($search->description = 'cena' && $search->date = $dateToday){
             $activate = 0;
           }else {
             $activate = 1;
           }
-        }
+        }*/
+        return $event;
       }else{
-        $event = '';
+        $event = 'none';
         $activate = 0;
+        return $event;
       }
-      return view('admin.search.index')->with('user',$user)->with('event',$event)->with('activate',$activate)->with('hour',$hour);
+    //  return view('admin.search.index')->with('user',$user)->with('event',$event)->with('activate',$activate)->with('hour',$hour);
 
     }else{
       return redirect('http://www.cmb.org.co/corporativo/?identification='.$identification);
