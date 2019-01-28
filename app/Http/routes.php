@@ -15,6 +15,11 @@ Route::get('/', 'UserController@login');
 //Redirect Applications
 Route::get('redirect/login', ['uses' => 'HomeController@redirectURL']);
 
+Route::get('redirect/camara', function(){
+  return redirect()->to('/administrator');
+});
+
+
 //Super Administrator Routers
 Route::group(['prefix'=>'control','middleware'=>['auth','AccessControl']],function(){
 
