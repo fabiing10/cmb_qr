@@ -29,10 +29,10 @@ data-animsition-out="fade-out">>
                 <img src="{{URL::asset('admin/assets/images/logo0.png')}}" alt="..." class="img-profile-f">
                 <h3 style='color:white;'>{{$user->name}} {{$user->lastName}}!</h3>
               </div>
-              {{$activate}}
+
               <div class="form-group">
                 <select class="form-control" id="event" name="event" required="">
-                        <option value="">Escoge un evento a realizar</option>
+                        <option value="">Seleccione una opcion</option>
 
                         @if($activate == true)
                         <option value="{{$event}}">{{$event}}</option>
