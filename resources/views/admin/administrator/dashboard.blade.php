@@ -7,9 +7,10 @@
   <body>
     <video id="preview" style="width:100%;"></video>
     <script type="text/javascript">
-      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview'),  mirror: false });
       scanner.addListener('scan', function (content) {
         console.log(content);
+        window.open(content,'_self')
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
