@@ -6,68 +6,85 @@
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
   </head>
   <body>
-    <canvas id="canvas" hidden></canvas>
-    <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
-  <div id="output" hidden>
-    <div id="outputMessage">No QR code detected.</div>
-    <div hidden><b>Data:</b> <span id="outputData"></span></div>
+    <div>
+      <video muted playsinline id="qr-video"></video>
+      <canvas id="debug-canvas"></canvas>
   </div>
-  <script>
-    var video = document.createElement("video");
-    var canvasElement = document.getElementById("canvas");
-    var canvas = canvasElement.getContext("2d");
-    var loadingMessage = document.getElementById("loadingMessage");
-    var outputContainer = document.getElementById("output");
-    var outputMessage = document.getElementById("outputMessage");
-    var outputData = document.getElementById("outputData");
+  <div>
+      <select id="inversion-mode-select">
+          <option value="original">Scan original (dark QR code on bright background)</option>
+          <option value="invert">Scan with inverted colors (bright QR code on dark background)</option>
+          <option value="both">Scan both</option>
+      </select>
+      <br>
+      <input type="checkbox" id="debug-checkbox">
+      <label for="debug-checkbox">Show debug image</label>
+  </div>
+  <b>Detected QR code: </b>
+  <span id="cam-qr-result">None</span>
+  <hr>
 
-    function drawLine(begin, end, color) {
-      canvas.beginPath();
-      canvas.moveTo(begin.x, begin.y);
-      canvas.lineTo(end.x, end.y);
-      canvas.lineWidth = 4;
-      canvas.strokeStyle = color;
-      canvas.stroke();
-    }
 
-    // Use facingMode: environment to attemt to get the front camera on phones
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
-      video.srcObject = stream;
-      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
-      video.play();
-      requestAnimationFrame(tick);
-    });
 
-    function tick() {
-      loadingMessage.innerText = "⌛ Loading video..."
-      if (video.readyState === video.HAVE_ENOUGH_DATA) {
-        loadingMessage.hidden = true;
-        canvasElement.hidden = false;
-        outputContainer.hidden = false;
-
-        canvasElement.height = video.videoHeight;
-        canvasElement.width = video.videoWidth;
-        canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
-        var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
-        var code = jsQR(imageData.data, imageData.width, imageData.height, {
-          inversionAttempts: "invertFirst",
-        });
-        if (code) {
-          drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
-          drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
-          drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
-          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
-          outputMessage.hidden = true;
-          outputData.parentElement.hidden = false;
-          outputData.innerText = code.data;
-          window.open(code.data,'_self')
-        } else {
-          outputMessage.hidden = false;
-          outputData.parentElement.hidden = true;
-        }
+  <script type="module">
+      import QrScanner from "../assets/qr-scanner.min.js";
+      const video = document.getElementById('qr-video');
+      const debugCheckbox = document.getElementById('debug-checkbox');
+      const debugCanvas = document.getElementById('debug-canvas');
+      const debugCanvasContext = debugCanvas.getContext('2d');
+      const camQrResult = document.getElementById('cam-qr-result');
+      const fileSelector = document.getElementById('file-selector');
+      const fileQrResult = document.getElementById('file-qr-result');
+      function setResult(label, result) {
+          label.textContent = result;
+          label.style.color = 'teal';
+          clearTimeout(label.highlightTimeout);
+          label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
       }
-      requestAnimationFrame(tick);
-    }
+      // ####### Web Cam Scanning #######
+      const scanner = new QrScanner(video, result => setResult(camQrResult, result));
+      scanner.start();
+      document.getElementById('inversion-mode-select').addEventListener('change', event => {
+          scanner.setInversionMode(event.target.value);
+      });
+      // ####### File Scanning #######
+      fileSelector.addEventListener('change', event => {
+          const file = fileSelector.files[0];
+          if (!file) {
+              return;
+          }
+          QrScanner.scanImage(file)
+              .then(result => setResult(fileQrResult, result))
+              .catch(e => setResult(fileQrResult, e || 'No QR code found.'));
+      });
+      // ####### debug mode related code #######
+      debugCheckbox.addEventListener('change', () => setDebugMode(debugCheckbox.checked));
+      function setDebugMode(isDebug) {
+          const worker = scanner._qrWorker;
+          worker.postMessage({
+              type: 'setDebug',
+              data: isDebug
+          });
+          if (isDebug) {
+              debugCanvas.style.display = 'block';
+              worker.addEventListener('message', handleDebugImage);
+          } else {
+              debugCanvas.style.display = 'none';
+              worker.removeEventListener('message', handleDebugImage);
+          }
+      }
+      function handleDebugImage(event) {
+          const type = event.data.type;
+          if (type === 'debugImage') {
+              const imageData = event.data.data;
+              if (debugCanvas.width !== imageData.width || debugCanvas.height !== imageData.height) {
+                  debugCanvas.width = imageData.width;
+                  debugCanvas.height = imageData.height;
+              }
+              debugCanvasContext.putImageData(imageData, 0, 0);
+          }
+      }
   </script>
+
   </body>
 </html>
