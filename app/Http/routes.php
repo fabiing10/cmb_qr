@@ -15,7 +15,7 @@ Route::get('/', 'UserController@login');
 //Redirect Applications
 Route::get('redirect/login', ['uses' => 'HomeController@redirectURL']);
 
-Route::get('redirect/camara', function(){
+Route::get('camara', function(){
   return redirect()->to('/administrator');
 });
 
