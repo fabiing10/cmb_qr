@@ -110,7 +110,7 @@ class SuperAdminController extends Controller
       }elseif($hour >= '1700' && $hour <= '2100'){
         $event = 'cena';
        foreach($searchs as $search){
-          if($search->description = 'cena' && $search->date = $dateToday){
+          if($search->description == 'cena' && $search->date == $dateToday){
             $activate = 0;
           }else {
             $activate = 1;
