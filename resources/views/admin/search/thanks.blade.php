@@ -19,9 +19,9 @@ data-animsition-out="fade-out">>
               </div>
               <div class="form-group" style="width: 70%;">
                 <br>
-                  <button type="submit" onclick="window.location.href='https://qr.cmb.org.co/administrator'" class="btn btn-primary">
+                  <!--<button type="submit" onclick="window.location.href='https://qr.cmb.org.co/administrator'" class="btn btn-primary">
                      Volver al inicio
-                  </button>
+                  </button>-->
               </div>
             </div>
         </div>
