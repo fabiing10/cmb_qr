@@ -13,7 +13,7 @@ use App\Code,App\Characteristic;
 
 class SuperAdminController extends Controller
 {
-
+  private $data;
   public function dashboard(){
         //return view('admin.dashboard');
         return redirect('control/users');
@@ -84,43 +84,93 @@ class SuperAdminController extends Controller
       $user = User::where('identification', $identification)->first();
       $dateToday = date('d-m-Y');
       $searchs = Event::where('userId',$user->id)->where('date','=',$dateToday)->get();
+
+
+      $countS = Event::where('userId',$user->id)->where('date','=',$dateToday)->count();
+
+      //Count Desayuno
+      $countDesayuno = Event::where('userId',$user->id)->where('date','=',$dateToday)->where('description','=','Desayuno')->count();
+      //Count Almuerzo
+      $countAlmuerzo = Event::where('userId',$user->id)->where('date','=',$dateToday)->where('description','=','Almuerzo')->count();
+      //Count Cena
+      $countCena = Event::where('userId',$user->id)->where('date','=',$dateToday)->where('description','=','Cena')->count();
+
+      //Entradas
+      $countEntrada = Event::where('userId',$user->id)->where('description','=','Entrada')->where('date','=',$dateToday)->count();
+      //Salidas
+      $countSalida = Event::where('userId',$user->id)->where('description','=','Salida')->where('date','=',$dateToday)->count();
+      //Desayuno
+      $dataDesayuno = Event::where('userId',$user->id)->where('description','=','Desayuno')->where('date','=',$dateToday)->get();
+      //Almuerzo
+      $dataAlmuerzo = Event::where('userId',$user->id)->where('description','=','Almuerzo')->where('date','=',$dateToday)->get();
+      //Cena
+      $dataCena = Event::where('userId',$user->id)->where('description','=','Cena')->where('date','=',$dateToday)->get();
+
+
+
       $hour = date('Hi');
-      $activate = 0;
+
       if ($hour >= '0500' && $hour <= '1100'){
         $event = 'Desayuno';
-        foreach($searchs as $search) {
-          if ($search->description == 'Desayuno' && $search->date == $dateToday){
-            $activate = 0;
-          }else {
-            $activate = 1;
-          }
+        if($countS == 0){
+          $activate = true;
+        }else{
+          foreach($dataDesayuno as $search){
+             if($search->description == 'Desayuno' && $search->date == $dateToday){
+               $activate = false;
+             }else {
+               $activate = true;
+             }
+
+           }
         }
       }elseif($hour >= '1100' && $hour <= '1600'){
         $event = 'Almuerzo';
-        foreach($searchs as $search) {
-          if ($search->description == 'Almuerzo' && $search->date == $dateToday){
-            $activate = 0;
-          }else {
-            $activate = 1;
-          }
+        if($countS == 0){
+          $activate = true;
+        }else{
+          foreach($dataAlmuerzo as $search){
+             if($search->description == 'Almuerzo' && $search->date == $dateToday){
+               $activate = false;
+             }else {
+               $activate = true;
+             }
+
+           }
         }
 
-      }elseif($hour >= '1700' && $hour <= '2100'){
+      }elseif($hour > '1700' && $hour < '2100'){
         $event = 'Cena';
-       foreach($searchs as $search){
-          if($search->description == 'Cena' && $search->date == $dateToday){
-            $activate = 0;
-          }else {
-            $activate = 1;
-          }
+        if($countS == 0){
+          $activate = true;
+        }else{
+          foreach($dataCena as $search){
+             if($search->description == 'Cena' && $search->date == $dateToday){
+               $activate = false;
+             }else {
+               $activate  = true;
+             }
+           }
         }
+
+
 
       }else{
         $event = 'none';
         $activate = 0;
-
       }
-      return view('admin.search.index')->with('user',$user)->with('event',$event)->with('activate',$activate)->with('hour',$hour);
+
+
+
+      return view('admin.search.index')
+      ->with('user',$user)
+      ->with('event',$event)
+      ->with('activate',$activate)
+      ->with('countEntrada',$countEntrada)
+      ->with('countSalida',$countSalida)
+      ->with('countDesayuno',$countDesayuno)
+      ->with('countAlmuerzo',$countAlmuerzo)
+      ->with('countCena',$countCena);
 
     }else{
       return redirect('http://www.cmb.org.co/corporativo/?identification='.$identification);
@@ -128,6 +178,8 @@ class SuperAdminController extends Controller
   }
 
   public function saveEvent($identification, Request $request){
+
+    date_default_timezone_set('America/Bogota');
     $identification2 = Crypt::decrypt($identification);
     $user = User::where('identification', $identification2)->first();
     if($request->event != ""){

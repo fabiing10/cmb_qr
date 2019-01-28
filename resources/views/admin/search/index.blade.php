@@ -7,36 +7,38 @@ label {
     margin-right: 9px;
     font-weight: bold;
 }
+.bg-report label {
+    width: 100%;
+}
+.row.bg-report {
+    background: #33365fb5;
+    padding: 12px;
+    border-radius: 11px;
+}
 </style>
 @stop
 @section('content')
 <div class="page animsition vertical-align text-center" data-animsition-in="fade-in"
 data-animsition-out="fade-out">>
-   <div class="page-content vertical-align-middle">
-     <div class="brand">
-
-</div>
+   <div class="page-content vertical-align-middle" style="width: 320px;padding: 9px 0px;">
     {!! Form::open(array('method' => 'POST', 'class' => 'found-form','role' => 'form')) !!}
     <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
     <div class="row">
           <div class="col-lg-12">
               <div class="form-group">
                 <img src="{{URL::asset('admin/assets/images/logo0.png')}}" alt="..." class="img-profile-f">
-                <h2>Bienvenido {{$user->name}}!</h2>
+                <h3 style='color:white;'>{{$user->name}} {{$user->lastName}}!</h3>
               </div>
-              <!--
-              <div class="form-group">
-                  <p>Es una maravillosa noticia para la comunidad cuando alguien encuentra una mascota, Si haz encontrado una mascota digita el código que aparece en su collar en el siguiente campo:</p>
-              </div>
-            -->
+              {{$activate}}
               <div class="form-group">
                 <select class="form-control" id="event" name="event" required="">
                         <option value="">Escoge un evento a realizar</option>
-                        <option value="entrada">Entrada</option>
-                        @if($activate == 1)
+
+                        @if($activate == true)
                         <option value="{{$event}}">{{$event}}</option>
                         @endif
-                        <option value="salida">Salida</option>
+                        <option value="Entrada">Entrada</option>
+                        <option value="Salida">Salida</option>
                 </select>
               </div>
               <div class="form-group">
@@ -47,7 +49,18 @@ data-animsition-out="fade-out">>
               </div>
           </div>
         </div>
+
+
         {!! Form::close() !!}
+        <div class="row bg-report">
+          <div class="col-lg-12">
+            <label for="">Entradas: {{$countEntrada}}</label>
+            <label for="">Salidas: {{$countSalida}}</label>
+            <label for="">Desayuno: {{$countDesayuno}}</label>
+            <label for="">Almuerzo: {{$countAlmuerzo}}</label>
+            <label for="">Cena: {{$countCena}}</label>
+          </div>
+        </div>
     </div>
 </div>
 @endsection
