@@ -128,7 +128,7 @@ class SuperAdminController extends Controller
            }
 
         }
-
+        return "Desayuno";
       }elseif($hour >= '1100' && $hour <= '1600'){
         $event = 'Almuerzo';
         if($countS == 0){
