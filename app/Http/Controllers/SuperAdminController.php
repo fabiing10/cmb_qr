@@ -78,6 +78,7 @@ class SuperAdminController extends Controller
 
   public function eventFound($identification){
     date_default_timezone_set('America/Bogota');
+
     $userValidate = Auth::user();
     if($userValidate != ''){
       $identification = Crypt::decrypt($identification);
@@ -99,6 +100,7 @@ class SuperAdminController extends Controller
       $countEntrada = Event::where('userId',$user->id)->where('description','=','Entrada')->where('date','=',$dateToday)->count();
       //Salidas
       $countSalida = Event::where('userId',$user->id)->where('description','=','Salida')->where('date','=',$dateToday)->count();
+
       //Desayuno
       $dataDesayuno = Event::where('userId',$user->id)->where('description','=','Desayuno')->where('date','=',$dateToday)->get();
       //Almuerzo
@@ -126,7 +128,7 @@ class SuperAdminController extends Controller
            }
 
         }
-    
+
       }elseif($hour >= '1100' && $hour <= '1600'){
         $event = 'Almuerzo';
         if($countS == 0){
