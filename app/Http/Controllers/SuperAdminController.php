@@ -114,6 +114,7 @@ class SuperAdminController extends Controller
         $event = 'Desayuno';
         if($countS == 0){
           $activate = true;
+
         }else{
           foreach($dataDesayuno as $search){
              if($search->description == 'Desayuno' && $search->date == $dateToday){
@@ -123,7 +124,9 @@ class SuperAdminController extends Controller
              }
 
            }
+
         }
+    
       }elseif($hour >= '1100' && $hour <= '1600'){
         $event = 'Almuerzo';
         if($countS == 0){
@@ -152,8 +155,6 @@ class SuperAdminController extends Controller
              }
            }
         }
-
-
 
       }else{
         $event = 'none';
