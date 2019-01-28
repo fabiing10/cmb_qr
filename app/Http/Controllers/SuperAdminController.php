@@ -118,14 +118,13 @@ class SuperAdminController extends Controller
           $activate = true;
 
         }else{
-          foreach($dataDesayuno as $search){
-             if($search->description == 'Desayuno' && $search->date == $dateToday){
-               $activate = false;
-             }else {
-               $activate = true;
-             }
 
-           }
+          if($countDesayuno == 0){
+            $activate = true;
+          }else{
+            $activate = false;
+          }
+
 
         }
         return "Desayuno";
@@ -134,14 +133,11 @@ class SuperAdminController extends Controller
         if($countS == 0){
           $activate = true;
         }else{
-          foreach($dataAlmuerzo as $search){
-             if($search->description == 'Almuerzo' && $search->date == $dateToday){
-               $activate = false;
-             }else {
-               $activate = true;
-             }
-
-           }
+          if($countAlmuerzo == 0){
+            $activate = true;
+          }else{
+            $activate = false;
+          }
         }
 
       }elseif($hour > '1700' && $hour < '2100'){
@@ -149,13 +145,11 @@ class SuperAdminController extends Controller
         if($countS == 0){
           $activate = true;
         }else{
-          foreach($dataCena as $search){
-             if($search->description == 'Cena' && $search->date == $dateToday){
-               $activate = false;
-             }else {
-               $activate  = true;
-             }
-           }
+          if($countCena == 0){
+            $activate = true;
+          }else{
+            $activate = false;
+          }
         }
 
       }else{
