@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>QR Scan</title>
-    <script type="text/javascript" src="{{URL::asset('admin/assets/instascan.min.js')}}"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
   </head>
   <body>
     <video id="preview"></video>
