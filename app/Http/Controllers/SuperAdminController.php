@@ -87,20 +87,18 @@ class SuperAdminController extends Controller
       $hour = date('Hi');
       $activate = 0;
       if ($hour >= '0500' && $hour <= '1100'){
-        $event = 'desayuno';
-
-  
+        $event = 'Desayuno';
         foreach($searchs as $search) {
-          if ($search->description == 'desayuno' && $search->date == $dateToday){
+          if ($search->description == 'Desayuno' && $search->date == $dateToday){
             $activate = 0;
           }else {
             $activate = 1;
           }
         }
       }elseif($hour >= '1100' && $hour <= '1600'){
-        $event = 'almuerzo';
+        $event = 'Almuerzo';
         foreach($searchs as $search) {
-          if ($search->description == 'almuerzo' && $search->date == $dateToday){
+          if ($search->description == 'Almuerzo' && $search->date == $dateToday){
             $activate = 0;
           }else {
             $activate = 1;
@@ -108,9 +106,9 @@ class SuperAdminController extends Controller
         }
 
       }elseif($hour >= '1700' && $hour <= '2100'){
-        $event = 'cena';
+        $event = 'Cena';
        foreach($searchs as $search){
-          if($search->description == 'cena' && $search->date == $dateToday){
+          if($search->description == 'Cena' && $search->date == $dateToday){
             $activate = 0;
           }else {
             $activate = 1;
