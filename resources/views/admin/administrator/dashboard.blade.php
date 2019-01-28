@@ -60,6 +60,7 @@
         label.style.color = 'teal';
         clearTimeout(label.highlightTimeout);
         label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+        alert(result)
     }
 
     // ####### Web Cam Scanning #######
@@ -71,17 +72,7 @@
         scanner.setInversionMode(event.target.value);
     });
 
-    // ####### File Scanning #######
 
-    fileSelector.addEventListener('change', event => {
-        const file = fileSelector.files[0];
-        if (!file) {
-            return;
-        }
-        QrScanner.scanImage(file)
-            .then(result => setResult(fileQrResult, result))
-            .catch(e => setResult(fileQrResult, e || 'No QR code found.'));
-    });
 
 
     // ####### debug mode related code #######
