@@ -7,6 +7,7 @@
   </head>
   <body>
     <canvas id="canvas" hidden></canvas>
+    <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
   <div id="output" hidden>
     <div id="outputMessage">No QR code detected.</div>
     <div hidden><b>Data:</b> <span id="outputData"></span></div>
