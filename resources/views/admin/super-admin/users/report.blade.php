@@ -25,7 +25,7 @@
             <li><a href="/login">Inicio</a></li>
             <li class="active">Reporte</li>
           </ol>
-          <h2 class="page-title">Reporte</h2>
+          <h2 class="page-title">Reporte - {{$param}}</h2>
         </div>
   </div>
   <div class="col-xlg-6 col-md-6">
