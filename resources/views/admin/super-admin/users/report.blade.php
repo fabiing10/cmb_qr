@@ -7,6 +7,13 @@
 @section('style')
 <link rel="stylesheet" href="{{URL::asset('admin/global/vendor/asspinner/asSpinner.css')}}">
 <link rel="stylesheet" href="{{URL::asset('admin/global/vendor/select2/select2.css')}}">
+
+<style>
+.btn-style{
+  width: 150px;
+  float: left;
+}
+</style>
 @stop
 
 
@@ -22,11 +29,20 @@
         </div>
   </div>
   <div class="col-xlg-6 col-md-6">
-    <div class="block-option none-mobile">
+    <!--<div class="block-option none-mobile">
       <a href="users/generateReport/" class="btn btn-icon btn-primary btn-add-option wb-agregar-codigos" data-toggle="modal" style="background-color: #ffffff !important"></a>
       <span class="title-btn">Descargar Reporte</span>
-    </div>
+    </div>-->
   </div>
+</div>
+
+<div class="row" style="padding-top: 10px;">
+  <a href="/control/report/28-01-2019" class="btn btn-primary submit-btn btn-style">Lunes</a>
+  <a href="/control/report/29-01-2019" class="btn btn-primary submit-btn btn-style">Martes</a>
+  <a href="/control/report/30-01-2019" class="btn btn-primary submit-btn btn-style">Miercoles</a>
+  <a href="/control/report/31-01-2019" class="btn btn-primary submit-btn btn-style">Jueves</a>
+  <a href="/control/report/01-02-2019" class="btn btn-primary submit-btn btn-style">Viernes</a>
+  <a href="/control/report/02-02-2019" class="btn btn-primary submit-btn btn-style">Sabado</a>
 </div>
 
 <div class="row" style="padding-top: 10px;">

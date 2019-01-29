@@ -4,29 +4,12 @@
         <span class="site-menu-title">Usuarios</span>
     </a>
 </li>
-<!--
+<?php
+  $date = date('d-m-Y');
+
+?>
 <li class="site-menu-item has-sub">
-    <a href="/control">
-        <i class="site-menu-icon wb-inicio" aria-hidden="true"></i>
-        <span class="site-menu-title">Inicio</span>
-        <div class="site-menu-badge">
-        </div>
-    </a>
-</li>
-<li class="site-menu-item has-sub">
-    <a href="/control/veterinary">
-        <i class="site-menu-icon wb-veterinarias" aria-hidden="true"></i>
-        <span class="site-menu-title">Veterinarias</span>
-    </a>
-</li>
-<li class="site-menu-item has-sub">
-    <a href="/control/pets">
-        <i class="site-menu-icon wb-mascotas" aria-hidden="true"></i>
-        <span class="site-menu-title">Mascotas</span>
-    </a>
-</li>-->
-<li class="site-menu-item has-sub">
-    <a href="/control/report">
+  <a href="/control/report/<?php echo $date;?>">
         <i class="site-menu-icon wb-users" aria-hidden="true"></i>
         <span class="site-menu-title">Reporte</span>
     </a>
