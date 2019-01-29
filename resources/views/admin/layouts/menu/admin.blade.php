@@ -26,8 +26,8 @@
     </a>
 </li>-->
 <li class="site-menu-item has-sub">
-    <a href="/control/codes">
+    <a href="">
         <i class="site-menu-icon wb-codigos" aria-hidden="true"></i>
-        <span class="site-menu-title">Codigos</span>
+        <span class="site-menu-title"></span>
     </a>
 </li>
