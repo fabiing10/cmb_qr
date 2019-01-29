@@ -37,6 +37,30 @@ class SuperAdminController extends Controller
     return redirect('control/users');
   }
 
+  public function reportUsers($param){
+
+    $reportInsideCount = Event::where('date',$param)->where('description','Entrada')->count();
+    $reportOutsideCount = Event::where('date',$param)->where('description','Salida')->count();
+    $userTotal = User::all()->count();
+    $userWithoutOutside = ($userTotal - $reportInsideCount) - 2;
+    $reportBreakfastCount = Event::where('date',$param)->where('description','Desayuno')->count();
+    $reportLunchCount = Event::where('date',$param)->where('description','Almuerzo')->count();
+    $reportDinnerCount = Event::where('date',$param)->where('description','Cena')->count();
+
+    $users = User::all();
+
+    return view('admin.super-admin.users.report')
+    ->with('users', $users)
+    ->with('reportInsideCount', $reportInsideCount)
+    ->with('reportOutsideCount', $reportOutsideCount)
+    ->with('userWithoutOutside', $userWithoutOutside)
+    ->with('reportBreakfastCount', $reportBreakfastCount)
+    ->with('reportLunchCount', $reportLunchCount)
+    ->with('reportDinnerCount', $reportDinnerCount)
+    ->with('param', $param)
+    ->with('event',new Event());
+  }
+
   public function codeQR($userId){
       $userId = Crypt::decrypt($userId);
 

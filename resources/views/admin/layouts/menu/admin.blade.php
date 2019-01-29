@@ -26,8 +26,8 @@
     </a>
 </li>-->
 <li class="site-menu-item has-sub">
-    <a href="">
-        <i class="site-menu-icon wb-codigos" aria-hidden="true"></i>
-        <span class="site-menu-title"></span>
+    <a href="/control/report">
+        <i class="site-menu-icon wb-users" aria-hidden="true"></i>
+        <span class="site-menu-title">Reporte</span>
     </a>
 </li>

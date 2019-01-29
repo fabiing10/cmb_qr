@@ -24,6 +24,8 @@ Route::get('camara', function(){
 Route::group(['prefix'=>'control','middleware'=>['auth','AccessControl']],function(){
 
     Route::get('/', 'SuperAdminController@dashboard');
+    Route::get('/report/{param}', 'SuperAdminController@reportUsers');
+
     Route::group(['prefix'=>'users'],function(){
         Route::get('/', 'SuperAdminController@users');
         Route::get('/generateCodes', 'SuperAdminController@generateCodesQR');
