@@ -30,10 +30,8 @@ class SuperAdminController extends Controller
     $user->userType = 'user';
     $user->lastName = $request->lastName;
     $user->identification = $request->identification;
-    $user->phone = $request->phone;
-    $user->haveCode = 'false';
-    $user->activeCode = 'false';
-    $user->email = $request->email;
+    $user->zona = $request->zona;
+    $user->iglesia = $request->zona;
     $user->save();
 
     return redirect('control/users');
@@ -112,7 +110,7 @@ class SuperAdminController extends Controller
 
       $hour = date('Hi');
 
-      if ($hour >= '0500' && $hour <= '1100'){
+      if ($hour >= '0500' && $hour < '1100'){
         $event = 'Desayuno';
         if($countS == 0){
           $activate = true;
@@ -127,8 +125,8 @@ class SuperAdminController extends Controller
 
 
         }
-    
-      }elseif($hour >= '1100' && $hour <= '1600'){
+
+      }elseif($hour >= '1100' && $hour <= '1500'){
         $event = 'Almuerzo';
         if($countS == 0){
           $activate = true;

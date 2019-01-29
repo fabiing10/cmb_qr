@@ -93,7 +93,7 @@
                           <div class="form-group">
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="icon wb-mobile" aria-hidden="true"></i></span>
-                                  <input type="text" class="form-control" name="phone" placeholder="Celular">
+                                  <input type="text" class="form-control" name="iglesia" placeholder="Iglesia">
                               </div>
                           </div>
                         </div>
@@ -103,7 +103,7 @@
                           <div class="form-group">
                               <div class="input-group">
                                 <span class="input-group-addon"><i class="icon fa-envelope" aria-hidden="true"></i></span>
-                                  <input type="text" class="form-control" name="email" placeholder="Correo Electrónico *">
+                                  <input type="text" class="form-control" name="zona" placeholder="Zona">
                               </div>
                           </div>
                         </div>
@@ -115,13 +115,13 @@
                   <div class="row">
                     <div class="col-lg-6 form-group">
                       <div class="input-group">
-                        <label class="bold">Identificacion Cliente</label>
+                        <label class="bold">Identificacion </label>
                         <span id="identificationClient"></span>
                       </div>
                     </div>
                       <div class="col-lg-6 form-group">
                         <div class="input-group">
-                          <label class="bold">Nombres Cliente</label>
+                          <label class="bold">Nombres </label>
                           <span id="nameClient"></span>
                         </div>
                       </div>
@@ -129,22 +129,22 @@
                   <div class="row">
                     <div class="col-lg-6 form-group">
                       <div class="input-group">
-                        <label class="bold">Apellidos Cliente</label>
+                        <label class="bold">Apellidos </label>
                         <span id="lastNameClient"></span>
                       </div>
                     </div>
                     <div class="col-lg-6 form-group">
                       <div class="input-group">
-                        <label class="bold">Telefono Cliente</label>
-                        <span id="phoneClient"></span>
+                        <label class="bold">Iglesia</label>
+                        <span id="iglesiaData"></span>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-lg-12 form-group">
                       <div class="input-group">
-                        <label class="bold">Correo Electronico Cliente</label>
-                        <span id="emailClient"></span>
+                        <label class="bold">Zona</label>
+                        <span id="zonaData"></span>
                       </div>
                     </div>
                   </div>
@@ -228,12 +228,12 @@ function setUser(id){
         $("#lastNameClient").html($("[name='lastName']").val());
   });
 
-  $("[name='phone']").change(function(){
-        $("#phoneClient").html($("[name='phone']").val());
+  $("[name='zona']").change(function(){
+        $("#zonaData").html($("[name='zona']").val());
   });
 
-  $("[name='email']").change(function(){
-        $("#emailClient").html($("[name='email']").val());
+  $("[name='iglesia']").change(function(){
+        $("#iglesiaData").html($("[name='iglesia']").val());
   });
 
 
