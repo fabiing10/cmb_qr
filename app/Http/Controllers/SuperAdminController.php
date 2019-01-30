@@ -223,7 +223,7 @@ class SuperAdminController extends Controller
       }else{
         return view('admin.search.thanks')->with('user',$user);
       }
-      return $validate;
+
 
       return view('admin.search.thanks')->with('user',$user);
     }else {
