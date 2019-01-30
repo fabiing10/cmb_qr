@@ -19,7 +19,7 @@ data-animsition-out="fade-out">>
               </div>
               <div class="form-group" style="width: 70%;">
                 <br>
-                  <a href="https://qr.cmb.org.co/administrator/" class="btn btn-primary">
+                  <a href="https://qr.cmb.org.co/administrator/" class="btn btn-primary" style="width:150px;">
                      Scan QR
                   </a>
               </div>
