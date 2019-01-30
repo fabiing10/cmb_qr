@@ -28,7 +28,7 @@ if(isAndroid) {
     console.error(e);
   });
 }else{
-  let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: true });
+  let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
   scanner.addListener('scan', function (content) {
     window.open(content, '_self');
   });
