@@ -206,7 +206,7 @@ class SuperAdminController extends Controller
     $validate = Event::where('userId',$user->id)->where('description','=',$request->event)->where('date','=',$dateToday)->count();
 
     if($request->event != ""){
-      if($validate > 0 && $request->event == 'Desayuno' || $request->event == 'Almuerzo' || $request->event == 'Cena'){
+      if($validate < 0 && $request->event == 'Desayuno' || $request->event == 'Almuerzo' || $request->event == 'Cena'){
         return view('admin.search.thanks')->with('user',$user);
       }else{
         $event = new Event;
