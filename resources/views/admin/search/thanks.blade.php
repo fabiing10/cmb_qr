@@ -19,9 +19,9 @@ data-animsition-out="fade-out">>
               </div>
               <div class="form-group" style="width: 70%;">
                 <br>
-                  <button type="submit" onclick="close_window();return false;" class="btn btn-primary">
-                     Cerrar Ventana
-                  </button>
+                  <a href="https://qr.cmb.org.co/administrator/" class="btn btn-primary">
+                     Scan QR
+                  </a>
               </div>
             </div>
         </div>
