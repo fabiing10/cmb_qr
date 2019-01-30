@@ -201,12 +201,21 @@ class SuperAdminController extends Controller
     date_default_timezone_set('America/Bogota');
     $identification2 = Crypt::decrypt($identification);
     $user = User::where('identification', $identification2)->first();
+
+    $dateToday = date('d-m-Y');
+    $validate = Event::where('userId',$user->id)->where('description','=',$request->event)->where('date','=',$dateToday)->count();
+
     if($request->event != ""){
-      $event = new Event;
-      $event->description = $request->event;
-      $event->userId = $user->id;
-      $event->date = date('d-m-Y');
-      $event->save();
+      if($validate > 0){
+        return view('admin.search.thanks')->with('user',$user);
+      }else{
+        $event = new Event;
+        $event->description = $request->event;
+        $event->userId = $user->id;
+        $event->date = date('d-m-Y');
+        $event->save();
+      }
+
       return view('admin.search.thanks')->with('user',$user);
     }else {
       return redirect('events/'.$identification);
